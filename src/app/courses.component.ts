@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CoursesService } from "./courses.service";
 
 @Component({
     selector: 'courses', // <courses>
@@ -12,6 +13,10 @@ import { Component } from "@angular/core";
         `
 })
 export class CoursesComponent {
+    constructor(service: CoursesService) {
+        // let service = new CoursesService(); using a dependency injection into the constructor instead of this
+        this.courses = service.getCourses();
+    }
     title = "List of Courses";
-    courses = [];
+    courses;
 }
