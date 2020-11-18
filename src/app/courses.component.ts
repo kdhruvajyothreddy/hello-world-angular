@@ -4,12 +4,13 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <input (keyup.enter) = "onKeyUp()" /> <!-- Calling 'onKeyUp' method after "ENTER" key using Event Filtering -->
+        <input (keyup.enter) = "onKeyUp($event)" /> 
+        <!-- Traditional way of passing a value from front end using event object -->
         `
 })
 export class CoursesComponent {
-    onKeyUp() {
-        console.log("ENTER was pressed");
+    onKeyUp($event) {
+        console.log($event.target.value); //Logging passed variable from front end
     }
         
 }
