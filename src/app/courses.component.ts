@@ -5,15 +5,16 @@ import { CoursesService } from "./courses.service";
     selector: 'courses', // <courses>
     template: `
         <h2>{{ title }}</h2>
-        <h2 [textContent] = "title"> </h2>
         <ul>
             <li *ngFor="let course of courses"> <!-- Example to display text for Property Binding -->
                 {{course}}
             </li>
         </ul>
-        <img src="{{ imageUrl }}" /> <!-- Example for String interpolation -->
-        <br/>
-        <img [src] = "imageUrl" /> <!-- Example for Property Binding -->
+        <table>
+            <tr>
+                <td [attr.colSpan] = "colSpan">Hello</td> <!-- Using html attribute with attr. -->
+            </tr>
+        </table>
         `
 })
 export class CoursesComponent {
@@ -23,5 +24,6 @@ export class CoursesComponent {
     }
     title = "List of Courses";
     courses;
-    imageUrl = "http://lorempixel.com/400/200"
+    colSpan = 2; // Creating attribute for binding
+    
 }
