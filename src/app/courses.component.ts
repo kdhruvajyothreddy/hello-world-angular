@@ -4,11 +4,11 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'red'">Save</button> 
-        <!-- Adding a new style object "backgroundColor" and binding it to conditionally display backround color -->
+        <button class="btn btn-primary" (click)="onSave()">Save</button> <!--Event based binding by calling a method-->
         `
 })
 export class CoursesComponent {
-    isActive = true; // variable used for style binding
-    
+    onSave() { // Adding a method to be called at front end for event binding
+        console.log("Button was clicked");
+    }
 }
