@@ -11,10 +11,11 @@ import { CoursesService } from "./courses.service";
         `
 })
 export class CoursesComponent {
-    onSave($event) { // Event based binding and passing additional information about the event
+    onSave($event) { 
+        $event.stopPropagation(); // To avoid event bubbling in event binding
         console.log("Button was clicked", $event);
     }
-    onDivClicked($event) { // Passing event to display event bubbling in event binding
+    onDivClicked($event) { 
         console.log("Button was clicked in Div", $event);
         
     }
