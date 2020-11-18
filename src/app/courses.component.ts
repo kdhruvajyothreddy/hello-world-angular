@@ -4,13 +4,13 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <input (keyup.enter) = "onKeyUp($event)" /> 
-        <!-- Traditional way of passing a value from front end using event object -->
+            <input #email (keyup.enter)="onKeyUp(email.value)" /> 
+            <!-- Passing variable from front end after hitting "ENTER" using Angular -->
         `
 })
 export class CoursesComponent {
-    onKeyUp($event) {
-        console.log($event.target.value); //Logging passed variable from front end
+    onKeyUp(email) { // Using the passed variable from front end
+        console.log(email);        
     }
         
 }
