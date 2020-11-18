@@ -4,17 +4,7 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <h2>{{ title }}</h2>
-        <ul>
-            <li *ngFor="let course of courses"> <!-- Example to display text for Property Binding -->
-                {{course}}
-            </li>
-        </ul>
-        <table>
-            <tr>
-                <td [attr.colSpan] = "colSpan">Hello</td> <!-- Using html attribute with attr. -->
-            </tr>
-        </table>
+        <button class="btn btn-primary">Save</button>
         `
 })
 export class CoursesComponent {
