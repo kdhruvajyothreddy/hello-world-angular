@@ -4,10 +4,11 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <button class="btn btn-primary" [class.active]="isActive">Save</button> <!-- Adding a new class "active" and binding it -->
+        <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'red'">Save</button> 
+        <!-- Adding a new style object "backgroundColor" and binding it to conditionally display backround color -->
         `
 })
 export class CoursesComponent {
-    isActive = true; // variable used for class binding
+    isActive = true; // variable used for style binding
     
 }
