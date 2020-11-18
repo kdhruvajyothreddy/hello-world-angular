@@ -4,16 +4,10 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" [class.active]="isActive">Save</button> <!-- Adding a new class "active" and binding it -->
         `
 })
 export class CoursesComponent {
-    constructor(service: CoursesService) {
-        // let service = new CoursesService(); using a dependency injection into the constructor instead of this
-        this.courses = service.getCourses();
-    }
-    title = "List of Courses";
-    courses;
-    colSpan = 2; // Creating attribute for binding
+    isActive = true; // variable used for class binding
     
 }
