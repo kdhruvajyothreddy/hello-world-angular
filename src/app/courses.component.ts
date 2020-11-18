@@ -4,19 +4,12 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-        <div (click)="onDivClicked($event)" > <!-- Event bubbling in event binding -->
-            <button class="btn btn-primary" (click)="onSave($event)">Save</button> 
-            <!-- Event based binding and gathering additional information -->
-        </div>
+        <input (keyup.enter) = "onKeyUp()" /> <!-- Calling 'onKeyUp' method after "ENTER" key using Event Filtering -->
         `
 })
 export class CoursesComponent {
-    onSave($event) { 
-        $event.stopPropagation(); // To avoid event bubbling in event binding
-        console.log("Button was clicked", $event);
+    onKeyUp() {
+        console.log("ENTER was pressed");
     }
-    onDivClicked($event) { 
-        console.log("Button was clicked in Div", $event);
         
-    }
 }
