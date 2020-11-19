@@ -4,13 +4,14 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses', // <courses>
     template: `
-            <input #email (keyup.enter)="onKeyUp(email.value)" /> 
-            <!-- Passing variable from front end after hitting "ENTER" using Angular -->
+            <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" /> 
+            <!-- Implementing Two way data binding using ngModel property-->
         `
 })
 export class CoursesComponent {
-    onKeyUp(email) { // Using the passed variable from front end
-        console.log(email);        
+    email;
+    onKeyUp() { 
+        console.log(this.email);        
     }
         
 }
